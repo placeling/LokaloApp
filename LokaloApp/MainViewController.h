@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<CLLocationManagerDelegate>
+
+@property(nonatomic, strong) IBOutlet UISwitch *onSwitch;
+
+
+-(IBAction)toggleSwitch:(id)sender;
 
 @end
+

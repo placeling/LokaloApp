@@ -32,13 +32,20 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if ( [FBSession.activeSession isOpen] ) {
+        // No, display the login page.
+        MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+        [self presentViewController:mainViewController animated:true completion:nil];
+    }
+}
+
 -(void) receiveGraphConnection:(FBRequestConnection*)connection
                 userDictionary:(NSDictionary<FBGraphUser>*)user
                          token:(NSString *)token
                          error:(NSError*)error{
     
-    MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
-    [self presentViewController:mainViewController animated:true completion:nil];
 
 }
 
@@ -50,16 +57,10 @@
     switch (state) {
         case FBSessionStateOpen: {
             
-            [SVProgressHUD showWithStatus:@"Authenticating"];
+            [SVProgressHUD showSuccessWithStatus:@"Authenticated!"];
             
-            [[FBRequest requestForGraphPath:@"me/accounts"] startWithCompletionHandler:
-             ^(FBRequestConnection *connection, NSDictionary *result, NSError *error) {
-                 [SVProgressHUD dismiss];
-             }];
-            
-            
-
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+            MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+            [self presentViewController:mainViewController animated:true completion:nil];
             
         }
             break;

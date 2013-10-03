@@ -8,11 +8,17 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController (){
+    CLLocationManager *_locationManager;
+    NSUUID *_uuid;
+    BOOL _notifyOnDisplay;
+}
 
 @end
 
 @implementation MainViewController
+
+@synthesize onSwitch;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,11 +29,57 @@
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
 	// Do any additional setup after loading the view.
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:[NSUUID UUID] identifier:@"com.lokaloapp.LokaloApp"];
+    region = [_locationManager.monitoredRegions member:region];
+    if(region)
+    {
+        _uuid = region.proximityUUID;
+        _notifyOnDisplay = region.notifyEntryStateOnDisplay;
+        self.onSwitch.on = true;
+    }
+    else
+    {
+        // Default settings.
+        _uuid =  [[NSUUID alloc] initWithUUIDString:LOKALO_UUID];
+        _notifyOnDisplay = NO;
+        self.onSwitch.on = false;
+    }
+}
+
+-(IBAction)toggleSwitch:(id)sender{
+    if( self.onSwitch.on )
+    {
+        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:_uuid identifier:@"com.lokaloapp.LokaloApp"];
+        
+        if(region)
+        {
+            region.notifyOnEntry = true;
+            region.notifyOnExit = true;
+            region.notifyEntryStateOnDisplay = _notifyOnDisplay;
+            
+            [_locationManager startMonitoringForRegion:region];
+        }
+    }
+    else
+    {
+        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:[NSUUID UUID] identifier:@"com.lokaloapp.LokaloApp"];
+        [_locationManager stopMonitoringForRegion:region];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
