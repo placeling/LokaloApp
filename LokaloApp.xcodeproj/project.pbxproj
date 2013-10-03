@@ -14,13 +14,23 @@
 		28FEF52017FE0B390065BA4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF51F17FE0B390065BA4D /* main.m */; };
 		28FEF52417FE0B390065BA4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF52317FE0B390065BA4D /* AppDelegate.m */; };
 		28FEF52717FE0B390065BA4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FEF52517FE0B390065BA4D /* Main.storyboard */; };
-		28FEF52A17FE0B390065BA4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF52917FE0B390065BA4D /* ViewController.m */; };
 		28FEF52C17FE0B390065BA4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FEF52B17FE0B390065BA4D /* Images.xcassets */; };
 		28FEF53317FE0B3A0065BA4D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF53217FE0B3A0065BA4D /* XCTest.framework */; };
 		28FEF53417FE0B3A0065BA4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF51317FE0B390065BA4D /* Foundation.framework */; };
 		28FEF53517FE0B3A0065BA4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF51717FE0B390065BA4D /* UIKit.framework */; };
 		28FEF53D17FE0B3A0065BA4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28FEF53B17FE0B3A0065BA4D /* InfoPlist.strings */; };
 		28FEF53F17FE0B3A0065BA4D /* LokaloAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF53E17FE0B3A0065BA4D /* LokaloAppTests.m */; };
+		28FEF54917FE0B7D0065BA4D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF54817FE0B7D0065BA4D /* CoreLocation.framework */; };
+		28FEF54B17FE0B890065BA4D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF54A17FE0B890065BA4D /* Social.framework */; };
+		28FEF54D17FE0B8E0065BA4D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF54C17FE0B8E0065BA4D /* Accounts.framework */; };
+		28FEF54F17FE0ED10065BA4D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF54E17FE0ED10065BA4D /* FacebookSDK.framework */; };
+		28FEF55217FE0F880065BA4D /* join_facebook_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28FEF55117FE0F880065BA4D /* join_facebook_icon.png */; };
+		28FEF55517FE10470065BA4D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF55417FE10470065BA4D /* LoginViewController.m */; };
+		28FEF55817FE13540065BA4D /* LokaloHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF55717FE13540065BA4D /* LokaloHelper.m */; };
+		28FEF55B17FE136D0065BA4D /* AuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF55A17FE136D0065BA4D /* AuthClient.m */; };
+		28FEF55E17FE14050065BA4D /* CredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF55D17FE14050065BA4D /* CredentialStore.m */; };
+		28FEF56217FE14B30065BA4D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF56117FE14B30065BA4D /* MainViewController.m */; };
+		CA7610991A2841028FB3A26A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BE3CC23B745BD907CC326 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B04ABDC47F4FA888B85306 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		28FEF51017FE0B390065BA4D /* LokaloApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LokaloApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FEF51317FE0B390065BA4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28FEF51517FE0B390065BA4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +56,29 @@
 		28FEF52217FE0B390065BA4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28FEF52317FE0B390065BA4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		28FEF52617FE0B390065BA4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		28FEF52817FE0B390065BA4D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		28FEF52917FE0B390065BA4D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		28FEF52B17FE0B390065BA4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28FEF53117FE0B3A0065BA4D /* LokaloAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LokaloAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FEF53217FE0B3A0065BA4D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		28FEF53A17FE0B3A0065BA4D /* LokaloAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LokaloAppTests-Info.plist"; sourceTree = "<group>"; };
 		28FEF53C17FE0B3A0065BA4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		28FEF53E17FE0B3A0065BA4D /* LokaloAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LokaloAppTests.m; sourceTree = "<group>"; };
+		28FEF54817FE0B7D0065BA4D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		28FEF54A17FE0B890065BA4D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		28FEF54C17FE0B8E0065BA4D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		28FEF54E17FE0ED10065BA4D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		28FEF55117FE0F880065BA4D /* join_facebook_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = join_facebook_icon.png; sourceTree = "<group>"; };
+		28FEF55317FE10470065BA4D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		28FEF55417FE10470065BA4D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		28FEF55617FE13540065BA4D /* LokaloHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LokaloHelper.h; path = ../LokaloHelper.h; sourceTree = "<group>"; };
+		28FEF55717FE13540065BA4D /* LokaloHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LokaloHelper.m; path = ../LokaloHelper.m; sourceTree = "<group>"; };
+		28FEF55917FE136D0065BA4D /* AuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthClient.h; sourceTree = "<group>"; };
+		28FEF55A17FE136D0065BA4D /* AuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthClient.m; sourceTree = "<group>"; };
+		28FEF55C17FE14050065BA4D /* CredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialStore.h; sourceTree = "<group>"; };
+		28FEF55D17FE14050065BA4D /* CredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredentialStore.m; sourceTree = "<group>"; };
+		28FEF55F17FE144A0065BA4D /* SharedConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
+		28FEF56017FE14B30065BA4D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		28FEF56117FE14B30065BA4D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		482BE3CC23B745BD907CC326 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +86,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FEF54D17FE0B8E0065BA4D /* Accounts.framework in Frameworks */,
+				28FEF54B17FE0B890065BA4D /* Social.framework in Frameworks */,
+				28FEF54917FE0B7D0065BA4D /* CoreLocation.framework in Frameworks */,
 				28FEF51617FE0B390065BA4D /* CoreGraphics.framework in Frameworks */,
 				28FEF51817FE0B390065BA4D /* UIKit.framework in Frameworks */,
+				28FEF54F17FE0ED10065BA4D /* FacebookSDK.framework in Frameworks */,
 				28FEF51417FE0B390065BA4D /* Foundation.framework in Frameworks */,
+				CA7610991A2841028FB3A26A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +117,7 @@
 				28FEF53817FE0B3A0065BA4D /* LokaloAppTests */,
 				28FEF51217FE0B390065BA4D /* Frameworks */,
 				28FEF51117FE0B390065BA4D /* Products */,
+				01B04ABDC47F4FA888B85306 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +133,15 @@
 		28FEF51217FE0B390065BA4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28FEF54E17FE0ED10065BA4D /* FacebookSDK.framework */,
+				28FEF54C17FE0B8E0065BA4D /* Accounts.framework */,
+				28FEF54A17FE0B890065BA4D /* Social.framework */,
+				28FEF54817FE0B7D0065BA4D /* CoreLocation.framework */,
 				28FEF51317FE0B390065BA4D /* Foundation.framework */,
 				28FEF51517FE0B390065BA4D /* CoreGraphics.framework */,
 				28FEF51717FE0B390065BA4D /* UIKit.framework */,
 				28FEF53217FE0B3A0065BA4D /* XCTest.framework */,
+				482BE3CC23B745BD907CC326 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,13 +149,22 @@
 		28FEF51917FE0B390065BA4D /* LokaloApp */ = {
 			isa = PBXGroup;
 			children = (
+				28FEF55617FE13540065BA4D /* LokaloHelper.h */,
+				28FEF55717FE13540065BA4D /* LokaloHelper.m */,
+				28FEF55F17FE144A0065BA4D /* SharedConstants.h */,
+				28FEF55C17FE14050065BA4D /* CredentialStore.h */,
+				28FEF55D17FE14050065BA4D /* CredentialStore.m */,
+				28FEF55917FE136D0065BA4D /* AuthClient.h */,
+				28FEF55A17FE136D0065BA4D /* AuthClient.m */,
 				28FEF52217FE0B390065BA4D /* AppDelegate.h */,
 				28FEF52317FE0B390065BA4D /* AppDelegate.m */,
 				28FEF52517FE0B390065BA4D /* Main.storyboard */,
-				28FEF52817FE0B390065BA4D /* ViewController.h */,
-				28FEF52917FE0B390065BA4D /* ViewController.m */,
 				28FEF52B17FE0B390065BA4D /* Images.xcassets */,
 				28FEF51A17FE0B390065BA4D /* Supporting Files */,
+				28FEF55317FE10470065BA4D /* LoginViewController.h */,
+				28FEF55417FE10470065BA4D /* LoginViewController.m */,
+				28FEF56017FE14B30065BA4D /* MainViewController.h */,
+				28FEF56117FE14B30065BA4D /* MainViewController.m */,
 			);
 			path = LokaloApp;
 			sourceTree = "<group>";
@@ -126,6 +172,7 @@
 		28FEF51A17FE0B390065BA4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				28FEF55017FE0F790065BA4D /* Images */,
 				28FEF51B17FE0B390065BA4D /* LokaloApp-Info.plist */,
 				28FEF51C17FE0B390065BA4D /* InfoPlist.strings */,
 				28FEF51F17FE0B390065BA4D /* main.m */,
@@ -152,6 +199,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		28FEF55017FE0F790065BA4D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				28FEF55117FE0F880065BA4D /* join_facebook_icon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28FEF54217FE0B3A0065BA4D /* Build configuration list for PBXNativeTarget "LokaloApp" */;
 			buildPhases = (
+				BB78B308592A4C67A9596E14 /* Check Pods Manifest.lock */,
 				28FEF50C17FE0B390065BA4D /* Sources */,
 				28FEF50D17FE0B390065BA4D /* Frameworks */,
 				28FEF50E17FE0B390065BA4D /* Resources */,
+				4E1111C403144448A71613CB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +287,7 @@
 			files = (
 				28FEF52C17FE0B390065BA4D /* Images.xcassets in Resources */,
 				28FEF51E17FE0B390065BA4D /* InfoPlist.strings in Resources */,
+				28FEF55217FE0F880065BA4D /* join_facebook_icon.png in Resources */,
 				28FEF52717FE0B390065BA4D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +302,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E1111C403144448A71613CB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB78B308592A4C67A9596E14 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		28FEF50C17FE0B390065BA4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28FEF52A17FE0B390065BA4D /* ViewController.m in Sources */,
+				28FEF55517FE10470065BA4D /* LoginViewController.m in Sources */,
+				28FEF55B17FE136D0065BA4D /* AuthClient.m in Sources */,
 				28FEF52417FE0B390065BA4D /* AppDelegate.m in Sources */,
 				28FEF52017FE0B390065BA4D /* main.m in Sources */,
+				28FEF56217FE14B30065BA4D /* MainViewController.m in Sources */,
+				28FEF55E17FE14050065BA4D /* CredentialStore.m in Sources */,
+				28FEF55817FE13540065BA4D /* LokaloHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,9 +470,14 @@
 		};
 		28FEF54317FE0B3A0065BA4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B04ABDC47F4FA888B85306 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/imack/projects/LokaloApp,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LokaloApp/LokaloApp-Prefix.pch";
 				INFOPLIST_FILE = "LokaloApp/LokaloApp-Info.plist";
@@ -388,9 +488,14 @@
 		};
 		28FEF54417FE0B3A0065BA4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B04ABDC47F4FA888B85306 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/imack/projects/LokaloApp,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LokaloApp/LokaloApp-Prefix.pch";
 				INFOPLIST_FILE = "LokaloApp/LokaloApp-Info.plist";
@@ -460,6 +565,7 @@
 				28FEF54417FE0B3A0065BA4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28FEF54517FE0B3A0065BA4D /* Build configuration list for PBXNativeTarget "LokaloAppTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +574,7 @@
 				28FEF54717FE0B3A0065BA4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
