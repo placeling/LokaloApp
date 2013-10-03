@@ -21,3 +21,4 @@
 #import "AFNetworking.h"
 #import "AuthClient.h"
 #import "LokaloHelper.h"
+#import "CoreData+MagicalRecord.h"

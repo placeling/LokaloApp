@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import <UIImageView+WebCache.h>
 
 @interface MainViewController (){
     CLLocationManager *_locationManager;
@@ -19,6 +20,8 @@
 @implementation MainViewController
 
 @synthesize onSwitch;
+@synthesize profileView;
+@synthesize nameLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +31,6 @@
     }
     return self;
 }
-
 
 
 - (void)viewDidLoad
@@ -49,6 +51,7 @@
         _uuid = region.proximityUUID;
         _notifyOnDisplay = region.notifyEntryStateOnDisplay;
         self.onSwitch.on = true;
+        [_locationManager startMonitoringForRegion:region];
     }
     else
     {
@@ -57,7 +60,20 @@
         _notifyOnDisplay = NO;
         self.onSwitch.on = false;
     }
+    
+    [[FBRequest requestForMe] startWithCompletionHandler:
+     ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+         [self receiveGraphConnection:connection userDictionary:user token:[FBSession.activeSession.accessTokenData accessToken ] error:error];
+     }];
 }
+
+-(void) receiveGraphConnection:(FBRequestConnection*)connection
+                userDictionary:(NSDictionary<FBGraphUser>*)user
+                         token:(NSString *)token
+                         error:(NSError*)error{
+    self.nameLabel.text = user.name;
+}
+
 
 -(IBAction)toggleSwitch:(id)sender{
     if( self.onSwitch.on )
@@ -79,6 +95,8 @@
         [_locationManager stopMonitoringForRegion:region];
     }
 }
+
+
 
 
 - (void)didReceiveMemoryWarning

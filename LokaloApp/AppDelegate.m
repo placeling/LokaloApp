@@ -21,6 +21,13 @@
     // This location manager will be used to notify the user of region state transitions.
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded){
+        //re-open the session
+        [FBSession.activeSession openWithCompletionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+        }];
+    }
     
     return YES;
 }
@@ -43,10 +50,13 @@
     if(state == CLRegionStateInside)
     {
         notification.alertBody = @"You're inside the region";
+        
+        [_locationManager startRangingBeaconsInRegion:(CLBeaconRegion*)region];
     }
     else if(state == CLRegionStateOutside)
     {
         notification.alertBody = @"You're outside the region";
+        [_locationManager stopRangingBeaconsInRegion:(CLBeaconRegion*)region];
     }
     else
     {
@@ -55,7 +65,19 @@
     
     // If the application is in the foreground, it will get a callback to application:didReceiveLocalNotification:.
     // If its not, iOS will display the notification to the user.
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+-(void) locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+    if ( [beacons count] > 0 ){
+        CLBeacon *nearest = [beacons objectAtIndex:0];
+        NSLog(@"Ranged a beacon major:%@ minor:%@", nearest.major, nearest.minor);
+        [_locationManager stopRangingBeaconsInRegion:(CLBeaconRegion*)region];
+        
+    } else {
+        NSLog(@"Got weird state where no ranged beacons ");
+    }
 }
 
 -(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
