@@ -15,12 +15,45 @@
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
     notification.alertBody = [NSString stringWithFormat:@"Do you want to checkin to %@", location.name];
-    [notification.userInfo setValue:location.major forKey:@"major"];
-    [notification.userInfo setValue:location.minor forKey:@"minor"];
+    NSDictionary *userInfo = @{@"major":location.major, @"minor":location.minor, @"name":location.name};
+    
+    notification.userInfo = userInfo;
     
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
     
 }
+
++(void) handleUserCheckinResponse:(NSInteger)buttonIndex for:(NSDictionary*)userInfo{
+    
+    NSArray *locations = [Location MR_findByAttribute:@"major" withValue:[userInfo objectForKey:@"major"]];
+    Location *location  = [locations objectAtIndex:0];
+    
+    switch (buttonIndex) {
+        case 0: {
+            //yes
+            [LokaloHelper performCheckin:location];
+            
+        }case 1: {
+            //no
+            
+        }
+        case 2: {
+            //Always
+            location.auto_checkin = [NSNumber numberWithBool:true];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            [LokaloHelper performCheckin:location];
+            
+        }
+        case 3: {
+            //never
+            location.block_checkin = [NSNumber numberWithBool:true];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        }
+
+    }
+    
+}
+
 
 +(void) performCheckin:(Location*)location{
    
@@ -37,15 +70,7 @@
 
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if ( operation.response.statusCode  == 401 ){
-            //DLog(@"got facebook response: %@", user);
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
-        } else {
-            [[[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil, nil] show];
-        }
     }];
     
 }
@@ -82,7 +107,7 @@
         Location *location = [locations objectAtIndex:0];
         NSTimeInterval interval = [location.last_seen timeIntervalSinceNow];
         
-        if ( (-1*interval) > 5*60){
+        if ( (-1*interval) > 5*60 && ![location.block_checkin boolValue]){
             if ( [location.auto_checkin boolValue]){
                 [LokaloHelper performCheckin:(Location*)location];
             } else {

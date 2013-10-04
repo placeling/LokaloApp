@@ -12,6 +12,7 @@
 
 @implementation AppDelegate{
     CLLocationManager *_locationManager;
+    NSDictionary *_userInfo;
 }
 
 
@@ -117,8 +118,24 @@
 {
     
     // If the application is in the foreground, we will notify the user of the region's state via an alert.
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:notification.alertBody message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    _userInfo = notification.userInfo; //don't like this hack, but it'll do for now
+    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Do you want to checkin to %@",[_userInfo objectForKey:@"name"]] delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    [sheet addButtonWithTitle:@"Yes"];
+    [sheet addButtonWithTitle:@"No"];
+    [sheet addButtonWithTitle:@"Always"];
+    [sheet addButtonWithTitle:@"Never"];
+    
+    [sheet showInView: self.window];
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        [LokaloHelper handleUserCheckinResponse:buttonIndex for:_userInfo];
+    }
+        
 }
 
 @end

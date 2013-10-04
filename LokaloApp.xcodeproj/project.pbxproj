@@ -33,6 +33,7 @@
 		28FEF56517FE32670065BA4D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF56317FE32670065BA4D /* Model.xcdatamodeld */; };
 		28FEF56817FE33140065BA4D /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF56717FE33140065BA4D /* Location.m */; };
 		28FEF56B17FE36870065BA4D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF56A17FE36870065BA4D /* MobileCoreServices.framework */; };
+		28FEF56E17FE58360065BA4D /* PrompCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF56D17FE58360065BA4D /* PrompCheckinViewController.m */; };
 		CA7610991A2841028FB3A26A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BE3CC23B745BD907CC326 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		28FEF56617FE33140065BA4D /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		28FEF56717FE33140065BA4D /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		28FEF56A17FE36870065BA4D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		28FEF56C17FE58360065BA4D /* PrompCheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrompCheckinViewController.h; path = ../PrompCheckinViewController.h; sourceTree = "<group>"; };
+		28FEF56D17FE58360065BA4D /* PrompCheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrompCheckinViewController.m; path = ../PrompCheckinViewController.m; sourceTree = "<group>"; };
 		482BE3CC23B745BD907CC326 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -173,6 +176,8 @@
 				28FEF51A17FE0B390065BA4D /* Supporting Files */,
 				28FEF55317FE10470065BA4D /* LoginViewController.h */,
 				28FEF55417FE10470065BA4D /* LoginViewController.m */,
+				28FEF56C17FE58360065BA4D /* PrompCheckinViewController.h */,
+				28FEF56D17FE58360065BA4D /* PrompCheckinViewController.m */,
 				28FEF56017FE14B30065BA4D /* MainViewController.h */,
 				28FEF56117FE14B30065BA4D /* MainViewController.m */,
 				28FEF56317FE32670065BA4D /* Model.xcdatamodeld */,
@@ -363,6 +368,7 @@
 				28FEF55517FE10470065BA4D /* LoginViewController.m in Sources */,
 				28FEF55B17FE136D0065BA4D /* AuthClient.m in Sources */,
 				28FEF52417FE0B390065BA4D /* AppDelegate.m in Sources */,
+				28FEF56E17FE58360065BA4D /* PrompCheckinViewController.m in Sources */,
 				28FEF56517FE32670065BA4D /* Model.xcdatamodeld in Sources */,
 				28FEF56817FE33140065BA4D /* Location.m in Sources */,
 				28FEF52017FE0B390065BA4D /* main.m in Sources */,

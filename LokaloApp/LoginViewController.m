@@ -41,13 +41,6 @@
     }
 }
 
--(void) receiveGraphConnection:(FBRequestConnection*)connection
-                userDictionary:(NSDictionary<FBGraphUser>*)user
-                         token:(NSString *)token
-                         error:(NSError*)error{
-    
-
-}
 
 
 - (void)sessionStateChanged:(FBSession *)session
