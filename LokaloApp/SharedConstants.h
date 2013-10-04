@@ -11,7 +11,7 @@
 
 
 #ifdef DEBUG
-#   define SERVER_URL                     @"http://imack.ngrok.com"
+#   define SERVER_URL                     @"http://lokaloapp.com"
 #else
 #   define SERVER_URL                     @"http://lokaloapp.com"
 #endif

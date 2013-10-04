@@ -24,7 +24,6 @@
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
     [MagicalRecord setupAutoMigratingCoreDataStack];
-    [Location MR_truncateAll];// for testing
     
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded){
         //re-open the session
@@ -112,21 +111,24 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [LokaloHelper clearCheckins];
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     
-    // If the application is in the foreground, we will notify the user of the region's state via an alert.
-    _userInfo = notification.userInfo; //don't like this hack, but it'll do for now
-    
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Do you want to checkin to %@",[_userInfo objectForKey:@"name"]] delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
-    [sheet addButtonWithTitle:@"Yes"];
-    [sheet addButtonWithTitle:@"No"];
-    [sheet addButtonWithTitle:@"Always"];
-    [sheet addButtonWithTitle:@"Never"];
-    
-    [sheet showInView: self.window];
+    if ( notification.userInfo){
+        // If the application is in the foreground, we will notify the user of the region's state via an alert.
+        _userInfo = notification.userInfo; //don't like this hack, but it'll do for now
+        
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Do you want to checkin to %@",[_userInfo objectForKey:@"name"]] delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+        [sheet addButtonWithTitle:@"Yes"];
+        [sheet addButtonWithTitle:@"No"];
+        [sheet addButtonWithTitle:@"Always"];
+        [sheet addButtonWithTitle:@"Never"];
+        
+        [sheet showInView: self.window];
+    }
 }
 
 

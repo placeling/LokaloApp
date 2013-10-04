@@ -12,5 +12,6 @@
 
 +(void) handleRangedBeacon:(CLBeacon*)beacon;
 +(void) handleUserCheckinResponse:(NSInteger)buttonIndex for:(NSDictionary*)userInfo;
++(void) clearCheckins;
 
 @end

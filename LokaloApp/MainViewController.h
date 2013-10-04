@@ -17,6 +17,7 @@
 @property(nonatomic, strong) IBOutlet UILabel *nameLabel;
 
 -(IBAction)toggleSwitch:(id)sender;
+-(IBAction)clear:(id)sender;
 
 @end
 

@@ -70,12 +70,29 @@
     
     
     [[AuthClient sharedClient] postPath:@"/api/checkin" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
+        if ([location.auto_checkin boolValue]) {
+            UILocalNotification *notification = [[UILocalNotification alloc] init];
+            
+            notification.alertBody = [NSString stringWithFormat:@"You were checked in to %@", location.name];
+            [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+        }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
+        NSLog(@"%@", error.localizedDescription);
     }];
     
+}
+
++(void)clearCheckins{
+    //[Location MR_truncateAll];// for testing
+    NSString *fb_token = FBSession.activeSession.accessTokenData.accessToken;
+    
+    NSDictionary *dict = @{@"fb_token":fb_token};
+    [[AuthClient sharedClient] postPath:@"/api/clear" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"cleared checkins");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
 }
 
 +(void) grabNameData:(Location*)location  withPrompt:(bool)prompt{
@@ -110,7 +127,7 @@
         Location *location = [locations objectAtIndex:0];
         NSTimeInterval interval = [location.last_seen timeIntervalSinceNow];
         
-        if ( (-1*interval) > 5*60 && ![location.block_checkin boolValue]){
+        if ( (-1*interval) > 30*60 && ![location.block_checkin boolValue]){
             if ( [location.auto_checkin boolValue]){
                 [LokaloHelper performCheckin:(Location*)location];
             } else {

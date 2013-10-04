@@ -96,6 +96,10 @@
     }
 }
 
+-(IBAction)clear:(id)sender{
+    [LokaloHelper clearCheckins];
+}
+
 
 
 
