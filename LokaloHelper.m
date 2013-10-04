@@ -127,7 +127,7 @@
         Location *location = [locations objectAtIndex:0];
         NSTimeInterval interval = [location.last_seen timeIntervalSinceNow];
         
-        if ( (-1*interval) > 30*60 && ![location.block_checkin boolValue]){
+        if ( (-1*interval) > 1*60 && ![location.block_checkin boolValue]){
             if ( [location.auto_checkin boolValue]){
                 [LokaloHelper performCheckin:(Location*)location];
             } else {

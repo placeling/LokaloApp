@@ -54,16 +54,16 @@
             
             MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
             [self presentViewController:mainViewController animated:true completion:nil];
-            
-        }
             break;
+        }
         case FBSessionStateClosed:
-        case FBSessionStateClosedLoginFailed:
+        case FBSessionStateClosedLoginFailed:{
             // Once the user has logged in, we want them to
             // be looking at the root view.
             [FBSession.activeSession closeAndClearTokenInformation];
             
             break;
+        }
         default:
             break;
     }

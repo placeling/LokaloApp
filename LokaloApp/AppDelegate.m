@@ -57,6 +57,7 @@
     {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         [_locationManager stopRangingBeaconsInRegion:(CLBeaconRegion*)region];
+        [LokaloHelper clearCheckins];
     }
     else
     {
