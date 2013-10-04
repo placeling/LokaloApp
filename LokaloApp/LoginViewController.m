@@ -51,9 +51,14 @@
         case FBSessionStateOpen: {
             
             [SVProgressHUD showSuccessWithStatus:@"Authenticated!"];
+            [FBSession openActiveSessionWithPublishPermissions:[NSArray arrayWithObjects:@"publish_actions", nil] defaultAudience:FBSessionDefaultAudienceFriends allowLoginUI:TRUE completionHandler:^(FBSession *session,
+                                                                                                                                                                                                        FBSessionState state, NSError *error) {
+                MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+                [self presentViewController:mainViewController animated:true completion:nil];
+                
+            }];
             
-            MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
-            [self presentViewController:mainViewController animated:true completion:nil];
+            
             break;
         }
         case FBSessionStateClosed:
@@ -83,8 +88,8 @@
 
 
 -(IBAction) connectFacebook:(id)sender{
-    [FBSession openActiveSessionWithPublishPermissions:[NSArray arrayWithObjects:@"email", @"publish_actions", nil] defaultAudience:FBSessionDefaultAudienceFriends allowLoginUI:TRUE completionHandler:^(FBSession *session,
-                                                                                                                                                                                                                           FBSessionState state, NSError *error) {
+    [FBSession openActiveSessionWithReadPermissions:[NSArray arrayWithObjects:@"email", nil]
+                                       allowLoginUI:true completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
         [self sessionStateChanged:session state:state error:error];
     }];
     

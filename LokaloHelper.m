@@ -70,12 +70,10 @@
     
     
     [[AuthClient sharedClient] postPath:@"/api/checkin" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([location.auto_checkin boolValue]) {
-            UILocalNotification *notification = [[UILocalNotification alloc] init];
-            
-            notification.alertBody = [NSString stringWithFormat:@"You were checked in to %@", location.name];
-            [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-        }
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        
+        notification.alertBody = [NSString stringWithFormat:@"You were checked in to %@", location.name];
+        [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error.localizedDescription);

@@ -39,7 +39,6 @@
                                 </state>
                                 <connections>
                                     <action selector="connectFacebook:" destination="Ka8-Bx-abT" eventType="touchUpInside" id="02m-sc-KM0"/>
-                                    <segue destination="55w-ud-780" kind="custom" id="Nx7-ZC-ui2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lokalo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFh-uL-fkA">
