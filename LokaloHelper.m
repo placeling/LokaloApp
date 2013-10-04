@@ -32,22 +32,25 @@
         case 0: {
             //yes
             [LokaloHelper performCheckin:location];
+            break;
             
         }case 1: {
             //no
-            
+            break;
         }
         case 2: {
             //Always
             location.auto_checkin = [NSNumber numberWithBool:true];
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
             [LokaloHelper performCheckin:location];
+            break;
             
         }
         case 3: {
             //never
             location.block_checkin = [NSNumber numberWithBool:true];
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            break;
         }
 
     }
