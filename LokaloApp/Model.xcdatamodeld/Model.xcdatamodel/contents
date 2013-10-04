@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="auto_checkin" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="block_checkin" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="last_seen" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Location" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

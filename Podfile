@@ -3,5 +3,5 @@ platform :ios, '6.1'
     pod 'SVProgressHUD', '0.9'
     pod 'SDWebImage'
     pod 'SSKeychain', '1.2.0'
-
+    pod 'MagicalRecord'
 

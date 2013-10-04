@@ -30,6 +30,9 @@
 		28FEF55B17FE136D0065BA4D /* AuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF55A17FE136D0065BA4D /* AuthClient.m */; };
 		28FEF55E17FE14050065BA4D /* CredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF55D17FE14050065BA4D /* CredentialStore.m */; };
 		28FEF56217FE14B30065BA4D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF56117FE14B30065BA4D /* MainViewController.m */; };
+		28FEF56517FE32670065BA4D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF56317FE32670065BA4D /* Model.xcdatamodeld */; };
+		28FEF56817FE33140065BA4D /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FEF56717FE33140065BA4D /* Location.m */; };
+		28FEF56B17FE36870065BA4D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FEF56A17FE36870065BA4D /* MobileCoreServices.framework */; };
 		CA7610991A2841028FB3A26A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BE3CC23B745BD907CC326 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,10 @@
 		28FEF55F17FE144A0065BA4D /* SharedConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
 		28FEF56017FE14B30065BA4D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		28FEF56117FE14B30065BA4D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		28FEF56417FE32670065BA4D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		28FEF56617FE33140065BA4D /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		28FEF56717FE33140065BA4D /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		28FEF56A17FE36870065BA4D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		482BE3CC23B745BD907CC326 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FEF56B17FE36870065BA4D /* MobileCoreServices.framework in Frameworks */,
 				28FEF54D17FE0B8E0065BA4D /* Accounts.framework in Frameworks */,
 				28FEF54B17FE0B890065BA4D /* Social.framework in Frameworks */,
 				28FEF54917FE0B7D0065BA4D /* CoreLocation.framework in Frameworks */,
@@ -133,6 +141,7 @@
 		28FEF51217FE0B390065BA4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28FEF56A17FE36870065BA4D /* MobileCoreServices.framework */,
 				28FEF54E17FE0ED10065BA4D /* FacebookSDK.framework */,
 				28FEF54C17FE0B8E0065BA4D /* Accounts.framework */,
 				28FEF54A17FE0B890065BA4D /* Social.framework */,
@@ -149,6 +158,7 @@
 		28FEF51917FE0B390065BA4D /* LokaloApp */ = {
 			isa = PBXGroup;
 			children = (
+				28FEF56917FE331A0065BA4D /* Models */,
 				28FEF55617FE13540065BA4D /* LokaloHelper.h */,
 				28FEF55717FE13540065BA4D /* LokaloHelper.m */,
 				28FEF55F17FE144A0065BA4D /* SharedConstants.h */,
@@ -165,6 +175,7 @@
 				28FEF55417FE10470065BA4D /* LoginViewController.m */,
 				28FEF56017FE14B30065BA4D /* MainViewController.h */,
 				28FEF56117FE14B30065BA4D /* MainViewController.m */,
+				28FEF56317FE32670065BA4D /* Model.xcdatamodeld */,
 			);
 			path = LokaloApp;
 			sourceTree = "<group>";
@@ -205,6 +216,15 @@
 				28FEF55117FE0F880065BA4D /* join_facebook_icon.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		28FEF56917FE331A0065BA4D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28FEF56617FE33140065BA4D /* Location.h */,
+				28FEF56717FE33140065BA4D /* Location.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +363,8 @@
 				28FEF55517FE10470065BA4D /* LoginViewController.m in Sources */,
 				28FEF55B17FE136D0065BA4D /* AuthClient.m in Sources */,
 				28FEF52417FE0B390065BA4D /* AppDelegate.m in Sources */,
+				28FEF56517FE32670065BA4D /* Model.xcdatamodeld in Sources */,
+				28FEF56817FE33140065BA4D /* Location.m in Sources */,
 				28FEF52017FE0B390065BA4D /* main.m in Sources */,
 				28FEF56217FE14B30065BA4D /* MainViewController.m in Sources */,
 				28FEF55E17FE14050065BA4D /* CredentialStore.m in Sources */,
@@ -577,6 +599,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		28FEF56317FE32670065BA4D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				28FEF56417FE32670065BA4D /* Model.xcdatamodel */,
+			);
+			currentVersion = 28FEF56417FE32670065BA4D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 28FEF50817FE0B390065BA4D /* Project object */;
 }

@@ -10,4 +10,6 @@
 
 @interface LokaloHelper : NSObject
 
++(void) handleRangedBeacon:(CLBeacon*)beacon;
+
 @end
