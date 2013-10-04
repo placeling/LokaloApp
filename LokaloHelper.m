@@ -11,13 +11,10 @@
 
 @implementation LokaloHelper
 
-
-
-
 +(void) promptForAuthorization:(Location*)location{
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
-    notification.alertBody = @"Do you want to checkin to new location?";
+    notification.alertBody = [NSString stringWithFormat:@"Do you want to checkin to %@", location.name];
     [notification.userInfo setValue:location.major forKey:@"major"];
     [notification.userInfo setValue:location.minor forKey:@"minor"];
     
